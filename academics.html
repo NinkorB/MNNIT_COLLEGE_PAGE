@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="Academics">
+        <img src="img/logo.png" alt="College Logo" class="Academics-logo1">
+        <h1>Academics</h1>
+    </header>
+
+    <nav class="Academics-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admission.html">Admission</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <section class="aca-content">
+        <div class="aca-card">
+            <h2 class="aca-heading">Explore Our Departments</h2>
+            <label for="aca-department" class="aca-label">Choose a Department:</label>
+            <select id="aca-department" class="aca-select" onchange="updateCourses()">
+                <option value="" disabled selected>Select a Department</option>
+                <option value="science">Science</option>
+                <option value="arts">Arts</option>
+                <option value="commerce">Commerce</option>
+                <option value="engineering">Engineering</option>
+                <option value="medical">Medical</option>
+            </select>
+
+            <h2 class="aca-heading">Available Courses</h2>
+            <select id="aca-courses" class="aca-select" onchange="redirectToCourse()">
+                <option value="" disabled selected>Select a Course</option>
+            </select>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MNNIT Allahabad. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function updateCourses() {
+            const courses = {
+                science: { "Computer Science": "computer_science.html", "Mathematics": "mathematics.html", "Physics": "physics.html", "Chemistry": "chemistry.html" },
+                arts: { "English": "english.html", "History": "history.html", "Political Science": "political_science.html", "Sociology": "sociology.html" },
+                commerce: { "Accounting": "accounting.html", "Business Studies": "business_studies.html", "Economics": "economics.html" },
+                engineering: { "Mechanical": "mechanical.html", "Electrical": "electrical.html", "Civil": "civil.html", "Computer Science": "cs_engineering.html" },
+                medical: { "MBBS": "mbbs.html", "Nursing": "nursing.html", "Pharmacy": "pharmacy.html", "Biotechnology": "biotechnology.html" }
+            };
+
+            let department = document.getElementById("aca-department").value;
+            let courseSelect = document.getElementById("aca-courses");
+
+            courseSelect.innerHTML = '<option value="" disabled selected>Select a Course</option>';
+
+            if (department in courses) {
+                for (let course in courses[department]) {
+                    let option = document.createElement("option");
+                    option.textContent = course;
+                    option.value = courses[department][course]; // Store filename as value
+                    courseSelect.appendChild(option);
+                }
+            }
+        }
+
+        function redirectToCourse() {
+            let courseSelect = document.getElementById("aca-courses");
+            let selectedCourse = courseSelect.value;
+
+            if (selectedCourse) {
+                window.location.href = selectedCourse; // Redirect to selected course page
+            }
+        }
+    </script>
+</body>
+</html>
