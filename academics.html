@@ -27,11 +27,10 @@
             <label for="aca-department" class="aca-label">Choose a Department:</label>
             <select id="aca-department" class="aca-select" onchange="updateCourses()">
                 <option value="" disabled selected>Select a Department</option>
+                <option value="Engineering">Engineering</option>
                 <option value="science">Science</option>
-                <option value="arts">Arts</option>
-                <option value="commerce">Commerce</option>
-                <option value="engineering">Engineering</option>
-                <option value="medical">Medical</option>
+                <option value="cells">CellS & SNFCE</option>
+                <option value="Others">Others</option>
             </select>
 
             <h2 class="aca-heading">Available Courses</h2>
@@ -48,11 +47,10 @@
     <script>
         function updateCourses() {
             const courses = {
-                science: { "Computer Science": "computer_science.html", "Mathematics": "mathematics.html", "Physics": "physics.html", "Chemistry": "chemistry.html" },
-                arts: { "English": "english.html", "History": "history.html", "Political Science": "political_science.html", "Sociology": "sociology.html" },
-                commerce: { "Accounting": "accounting.html", "Business Studies": "business_studies.html", "Economics": "economics.html" },
-                engineering: { "Mechanical": "mechanical.html", "Electrical": "electrical.html", "Civil": "civil.html", "Computer Science": "cs_engineering.html" },
-                medical: { "MBBS": "mbbs.html", "Nursing": "nursing.html", "Pharmacy": "pharmacy.html", "Biotechnology": "biotechnology.html" }
+                science: { "Mathematics": "mathematics.html", "Physics": "physics.html", "Chemistry": "chemistry.html" },
+                Engineering: { "Mechanical Engineering": "me.html", "Computer Science & Engineering": "cse.html", "Electrical Engineering ": "ee.html", "Civil Engineering": "ce.html" },
+                cells: { "GIS Cell": "GC.html", "III Cell Studies": "III.html", "SNFCE": "SNFCE.html" },
+                Others: { "Humanities & Social Science": "hss.html", "Research Center": "center.html" }
             };
 
             let department = document.getElementById("aca-department").value;
