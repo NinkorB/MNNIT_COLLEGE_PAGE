@@ -1,0 +1,428 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #c091f3 0%, #7c51f0 100%);
+    color: #fff;
+    text-align: justify;
+    
+}
+
+/* Header Styling */
+.home-header {
+    height: 140px;
+    background: rgba(255, 255, 255, 0.6);
+    color: white;
+    padding: 13px;
+    display: flex;
+   
+    position: relative;
+    border-bottom: 3px solid #fff;
+    justify-content: space-evenly;
+}
+
+.logo {
+    margin-top: 10px;
+    height: 110px;
+}
+
+.logo2 {
+    margin-top: 18px;
+    height: 70px;
+}
+
+.search {
+    margin-top: 37px;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 25px;
+    padding: 5px 15px;
+    width: 250px;
+    height: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    flex: 1;
+    border-radius: 25px;
+    font-size: 1em;
+}
+
+.search-icon {
+    color: #333;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.search-icon:hover {
+    color: #6a11cb;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+header .logo:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Navigation Styling */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    color: #6a11cb;
+    text-decoration: underline;
+}
+
+/* Content Section Styling */
+.content {
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px auto;
+    width: 94%;
+    
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    border-bottom: 3px solid #2575fc;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.content hr {
+    border: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    width: 50%;
+    margin: 30px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Profile Image Section */
+.about-container {
+    display: flex;
+   
+}
+
+.about-image img {
+ 
+    height: 250px;
+ 
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+.about-text {
+    margin: auto;
+    margin-left: 2%;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    
+   
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 80%;
+    }
+
+    .about-text {
+        width: 90%;
+    }
+}
+
+
+/* Info Sections */
+.info-sections {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    width: 22%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.info-box h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    color: #666;
+    font-size: 1em;
+}
+
+.info-box .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #6a11cb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.info-box .btn:hover {
+    background: #2575fc;
+}
+
+/* Footer Styling */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Academics */
+.Academics{
+    height: 140px;
+    background: rgba(255, 255, 255, 0.6);
+    color: rgb(70, 61, 61);
+    display: flex;
+    /* box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.107); */
+    border-bottom: 3px solid #fff;
+    text-align: center;
+    
+}
+
+.Academics-logo1{
+    margin-top: 23px;
+    height: 110px;
+    margin-left: 7%;
+    justify-content: left;
+}
+
+.Academics-logo1:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+ .Academics h1 {
+    margin-left: 20%;
+    margin-top: 3%;
+    text-align: center;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.aca-content {
+    display: flex;
+    justify-content: center;
+    color: #6a11cb;
+    
+    margin-top: 50px;
+}
+
+.aca-card {
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.aca-heading {
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+/* Select Dropdown */
+.aca-label {
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+}
+
+.aca-select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.aca-select:hover {
+    background-color: #eaeaea;
+}
+
+.aca-select:focus {
+    border-color: #00509e;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(0, 80, 158, 0.5);
+}
+
+
+.content {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .info-box {
+        width: 30%;
+    }
+}
+
+@media (max-width: 992px) {
+    nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .info-box {
+        width: 45%;
+    }
+    
+    .content {
+        width: 98%;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search {
+        width: 200px;
+        margin: 20px 0;
+    }
+
+    .info-box {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    .Academics h1 {
+        font-size: 2em;
+    }
+
+    .Academics-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo, .logo2 {
+        height: 60px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .content h2 {
+        font-size: 2em;
+    }
+
+    .info-box {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    footer {
+        font-size: 0.8em;
+    }
+}
+
