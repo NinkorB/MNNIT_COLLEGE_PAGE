@@ -158,7 +158,8 @@ nav ul li a:hover {
 
 .about-image img {
  
-    height: 250px;
+    height: auto;
+    max-width: 500px;
  
     transition: transform 0.3s ease-in-out;
 }
