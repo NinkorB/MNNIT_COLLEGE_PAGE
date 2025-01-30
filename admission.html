@@ -21,68 +21,118 @@
     </nav>
     <section class="content">
         <h2>Admission Form</h2>
-        <form action="submit_form.php" method="post">
+        <form id="admissionForm">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
+            <input type="text" id="name" name="name" required>
+            
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
+            <input type="email" id="email" name="email" required>
+            
             <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required><br>
+            <input type="tel" id="phone" name="phone" required>
 
-            <!-- Department and Courses Selection -->
-            <label for="aca-department">Department:</label>
-            <select id="aca-department" class="aca-select" onchange="updateCourses()">
-                <option value="" disabled selected>Select a Department</option>
-                <option value="Engineering">Engineering</option>
-                <option value="science">Science</option>
-                <option value="cells">CellS & SNFCE</option>
-                <option value="Others">Others</option>
+            <label for="program">Program:</label>
+            <select id="program" name="program" onchange="updateDepartments()" required>
+                <option value="" disabled selected>Select Program</option>
+                <option value="UG">Undergraduate</option>
+                <option value="PG">Postgraduate</option>
+                <option value="PhD">PhD</option>
             </select>
 
-            <h2 class="aca-heading">Available Courses</h2>
-            <select id="aca-courses" class="aca-select" onchange="redirectToCourse()">
-                <option value="" disabled selected>Select a Course</option>
-            </select><br>
-
+            <div id="previous-education-section"></div>
+            
+            <label for="rank">Entrance Exam Rank:</label>
+            <input type="number" id="rank" name="rank" required>
+            
             <input type="submit" value="Apply">
         </form>
+
+        <div id="course-section" style="display: none;">
+            <h2>Select Course</h2>
+            <select id="course-selection" name="course">
+                <!-- Courses will be populated here dynamically -->
+            </select>
+            <button id="select-course-btn">Confirm Selection</button>
+        </div>
     </section>
     <footer>
         <p>&copy; 2025 MNNIT Allahabad. All Rights Reserved.</p>
     </footer>
 
     <script>
-        function updateCourses() {
-            const courses = {
-                science: { "Mathematics": "mathematics.html", "Physics": "physics.html", "Chemistry": "chemistry.html" },
-                Engineering: { "Mechanical Engineering": "me.html", "Computer Science & Engineering": "cse.html", "Electrical Engineering ": "ee.html", "Civil Engineering": "ce.html" },
-                cells: { "GIS Cell": "GC.html", "III Cell Studies": "III.html", "SNFCE": "SNFCE.html" },
-                Others: { "Humanities & Social Science": "hss.html", "Research Center": "center.html" }
-            };
+        const courses = {
+            science: { "Mathematics": "mathematics.html", "Physics": "physics.html", "Chemistry": "chemistry.html" },
+            Engineering: { "Mechanical Engineering": "me.html", "Computer Science & Engineering": "cse.html", "Electrical Engineering": "ee.html", "Civil Engineering": "ce.html" },
+            cells: { "GIS Cell": "GC.html", "III Cell Studies": "III.html", "SNFCE": "SNFCE.html" },
+            Others: { "Humanities & Social Science": "hss.html", "Research Center": "center.html" }
+        };
 
-            let department = document.getElementById("aca-department").value;
-            let courseSelect = document.getElementById("aca-courses");
+        function updateEducationFields() {
+            let program = document.getElementById("program").value;
+            let eduSection = document.getElementById("previous-education-section");
+            eduSection.innerHTML = "";
 
-            courseSelect.innerHTML = '<option value="" disabled selected>Select a Course</option>';
+            if (program === "UG") {
+                eduSection.innerHTML = `<label for='education'>12th Marks (%):</label>
+                                       <input type='number' id='education' name='education' required>`;
+            } else if (program === "PG") {
+                eduSection.innerHTML = `<label for='education'>Bachelor's Degree Marks (%):</label>
+                                       <input type='number' id='education' name='education' required>`;
+            } else if (program === "PhD") {
+                eduSection.innerHTML = `<label for='education'>Master's Degree Marks (%):</label>
+                                       <input type='number' id='education' name='education' required>`;
+            }
+        }
 
-            if (department in courses) {
-                for (let course in courses[department]) {
+        document.getElementById("program").addEventListener("change", updateEducationFields);
+
+        document.getElementById("admissionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let percentage = parseFloat(document.getElementById("education").value);
+            let rank = parseInt(document.getElementById("rank").value);
+
+            if (percentage > 70 && rank < 1000) {
+                alert("Congratulations! You are selected.");
+                displayCourses();
+            } else {
+                alert("You are not eligible.");
+            }
+        });
+
+        function displayCourses() {
+            let program = document.getElementById("program").value;
+            let courseSection = document.getElementById("course-section");
+            let courseSelect = document.getElementById("course-selection");
+
+            courseSelect.innerHTML = ""; // Clear previous options
+            let eligibleCourses = [];
+
+            // Determine eligible courses based on program
+            if (program === "UG" || program === "PG") {
+                eligibleCourses.push(courses.Engineering, courses.science);
+            } else if (program === "PhD") {
+                eligibleCourses.push(courses.Cells, courses.Others);
+            }
+
+            // Populate the courses dropdown dynamically
+            eligibleCourses.forEach(courseCategory => {
+                for (let course in courseCategory) {
                     let option = document.createElement("option");
+                    option.value = courseCategory[course];
                     option.textContent = course;
-                    option.value = courses[department][course]; // Store filename as value
                     courseSelect.appendChild(option);
                 }
-            }
+            });
+
+            // Show the course selection section
+            courseSection.style.display = "block";
         }
 
-        function redirectToCourse() {
-            let courseSelect = document.getElementById("aca-courses");
-            let selectedCourse = courseSelect.value;
-
-            if (selectedCourse) {
-                window.location.href = selectedCourse; // Redirect to selected course page
-            }
-        }
+        document.getElementById("select-course-btn").addEventListener("click", function() {
+            let selectedCourse = document.getElementById("course-selection").value;
+            alert("You have successfully selected a course! Redirecting to the course details.");
+            window.location.href = selectedCourse; // Redirect to the selected course page
+        });
     </script>
 </body>
 </html>
