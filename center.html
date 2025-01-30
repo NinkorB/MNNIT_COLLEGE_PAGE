@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIR</title>
+    <link rel="stylesheet" href="styles/styles4.css">
+</head>
+<body>
+    <header class="Academics">
+        <img src="img/logo.png" alt="College Logo" class="Academics-logo1">
+        <h1 style="margin-left: 3%;">Centre for Interdisciplinary Research</h1>
+    </header>
+
+    <nav class="Academics-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="admission.html">Admission</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div class="photos">
+        <img src="img/cir_1.jpg">
+        <img src="img/cir_2.jpg">
+        <img src="img/cir_3.jpg">
+        <img src="img/cir_4.jpg">
+        <img src="img/cir_5.jpg">
+        <img src="img/cir_b.jpg">
+        </div>
+    <section id="about">
+        <h2>About CIR</h2>
+        <p>The Centre for Interdisciplinary Research (CIR) was established in 2012 by Prof. P. Chakrabarti, Director of MNNIT Allahabad. With his vision for rapid developments in Science and Technology research, CIR was founded to strive and keep pace with cutting-edge research.</p>
+        <p>The primary objective of the CIR is to provide top research and analytical facilities for undergraduate, postgraduate students, research scholars, and faculty. CIR is successfully operating under the coordination of a core and technical committee appointed by the Director.</p>
+    </section>
+    
+    <section id="facilities">
+        <h2>Explore our Facilities</h2>
+        <ul>
+            <li>Dielectric Measurement</li>
+            <li>Pulse Laser Deposition Unit</li>
+            <li>Au-Pd Coater Unit</li>
+        </ul>
+    </section>
+    
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <p>Email: contact@cir-mnnit.ac.in</p>
+        <p>Phone: +91-532-2545404</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Centre for Interdisciplinary Research, MNNIT Allahabad</p>
+    </footer>
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.photos img');
+    
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.style.display = (index === slideIndex) ? 'block' : 'none';
+            });
+            slideIndex = (slideIndex + 1) % slides.length;
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    
+        showSlides();
+    </script>
+</body>
+</html>
