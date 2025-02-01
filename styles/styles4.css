@@ -1,0 +1,146 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #c091f3 0%, #7c51f0 100%);
+    color: #100f0f;
+    text-align: center;
+    padding-bottom: 60px; /* Prevents content from touching the footer */
+}
+
+/* Header Styling */
+header {
+    height: 140px;
+    background: rgba(255, 255, 255, 0.6);
+    color: rgb(70, 61, 61);
+    display: flex;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.107);
+    border-bottom: 3px solid #fff;
+    text-align: center;
+}
+.Academics-logo1 {
+    margin-top: 4%;
+    height: 50px;
+    margin-left: 7%;
+}
+
+.Academics-logo1:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+header h1 {
+    margin-left: 5%;
+    margin-top: 3%;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Navigation Styling */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+nav ul {
+
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    color: #6a11cb;
+    text-decoration: underline;
+}
+
+/* Slideshow Container */
+.photos {
+    position: relative;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.photos img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: none;
+}
+
+.photos img:first-child {
+    display: block;
+}
+
+/* Section Styling */
+section {
+    width: 80%;
+    margin: 30px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    color: #26252a;
+}
+
+p, ul {
+    font-size: 1.2em;
+    line-height: 1.6;
+    text-align: center;
+    color: #333;
+}
+
+/* Footer Styling */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+@media (max-width: 480px) {
+    
+    footer {
+        font-size: 0.8em;
+    }
+}

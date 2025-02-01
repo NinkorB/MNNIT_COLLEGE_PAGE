@@ -1,0 +1,118 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #c091f3 0%, #7c51f0 100%);
+    color: #100f0f;
+    text-align: center;
+    padding-bottom: 60px; /* Prevents content from touching the footer */
+}
+
+/* Header Styling */
+header {
+    height: 140px;
+    background: rgba(255, 255, 255, 0.6);
+    color: rgb(70, 61, 61);
+    display: flex;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.107);
+    border-bottom: 3px solid #fff;
+    text-align: center;
+}
+.Academics-logo1 {
+    margin-top: 4%;
+    height: 50px;
+    margin-left: 7%;
+}
+
+.Academics-logo1:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+header h1 {
+    margin-left: 5%;
+    margin-top: 3%;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Navigation Styling */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    color: #6a11cb;
+    text-decoration: underline;
+}
+
+
+/* Placement Section */
+.placement-section {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2, h3 {
+    color: #004085;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #007bff;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}

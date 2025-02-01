@@ -1,0 +1,167 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #c091f3 0%, #7c51f0 100%);
+    color: #100f0f;
+    text-align: center;
+    padding-bottom: 60px; /* Prevents content from touching the footer */
+}
+
+/* Header Styling */
+header {
+    height: 140px;
+    background: rgba(255, 255, 255, 0.6);
+    color: rgb(70, 61, 61);
+    display: flex;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.107);
+    border-bottom: 3px solid #fff;
+    text-align: center;
+}
+.Academics-logo1 {
+    margin-top: 4%;
+    height: 50px;
+    margin-left: 7%;
+}
+
+.Academics-logo1:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+header h1 {
+    margin-left: 5%;
+    margin-top: 3%;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Navigation Styling */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+nav ul {
+
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    color: #6a11cb;
+    text-decoration: underline;
+}
+
+
+/* Slideshow Container */
+.slideshow-container {
+    position: relative;
+    max-width: 80%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide slides by default */
+.slide {
+    display: none;
+}
+
+/* Images */
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Navigation Arrows */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots for navigation */
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.active, .dot:hover {
+    background-color: #007bff;
+}
+
+/* Fade Animation */
+.fade {
+    animation: fadeEffect 1.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0.4;}
+    to {opacity: 1;}
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    padding: 10px 0;
+    margin-top: 20px;
+}
