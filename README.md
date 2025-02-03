@@ -12,7 +12,7 @@ The **MNNIT College Page** is a simple and attractive website designed to provid
 - **Responsive Design:** Optimized for both desktop and mobile devices.
 
 ## 🎥 Demo Video
-[Watch the demo](https://youtu.be/of10XWo3XfI)
+[Watch the demo](https://youtu.be/5TpVzAEAmFk)
 
 ## 🛠️ Technologies Used
 - **HTML5** – Structuring the webpage content
